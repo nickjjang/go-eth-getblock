@@ -7,6 +7,11 @@ Run the terminal and go to the project root folder, and then run the command fol
 ```
 go run server.go
 ```
+or
+```
+air
+```
+for live reload, to install air refer https://github.com/cosmtrek/air
 
 ## 3. Project structure
 this project uses echo web framework.
