@@ -31,4 +31,5 @@ define lrucache module. key is int64
 
 ### 3.6. cache
 define a global cache variable to use in this project.
+global cache variable type is `lrucache.LRUCACHE`
 
