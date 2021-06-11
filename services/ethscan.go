@@ -32,7 +32,10 @@ func EthBlockNumber() int64 {
 	client := &http.Client{}
 	req, _ := http.NewRequest("POST", "https://cloudflare-eth.com", bytes.NewReader(body))
 	req.Header.Add("Content-Type", "application/json")
-	resp, _ := client.Do(req)
+	resp, respErr := client.Do(req)
+	if respErr != nil {
+		return -1
+	}
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -61,7 +64,10 @@ func EthGetBlockByNumber(number int64) interface{} {
 	client := &http.Client{}
 	req, _ := http.NewRequest("POST", "https://cloudflare-eth.com", bytes.NewReader(body))
 	req.Header.Add("Content-Type", "application/json")
-	resp, _ := client.Do(req)
+	resp, respErr := client.Do(req)
+	if respErr != nil {
+		return -1
+	}
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
